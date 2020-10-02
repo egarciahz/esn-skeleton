@@ -1,0 +1,9 @@
+{
+    "files.exclude": {
+        "**/node_modules": true,
+        "**/package-lock.json": true
+    },
+    "files.insertFinalNewline": true,
+    "editor.acceptSuggestionOnEnter": "off"
+    
+}
