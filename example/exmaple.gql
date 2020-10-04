@@ -1,0 +1,41 @@
+mutation add {
+  ezequiel: addGreetsName(name: "Ezequiel") {
+    name
+    id
+  }
+
+  other: addGreetsName(name: "Other") {
+    name
+    id
+  }
+
+  genesis: addGreetsName(name: "Genesis") {
+    name
+    id
+  }
+  
+  maria: addGreetsName(name: "Maria") {
+    name
+    id
+  }
+  
+  milagros: modName(id: 2, name: "Milagros"){
+    name
+    id
+  }
+}
+
+query all {
+  allNames: names {
+    name
+    id
+  }
+  name : sayGreets(id: 1)
+}
+
+mutation delGreets {
+  deleted: delName(id: 3){
+    name
+    id
+  }
+}

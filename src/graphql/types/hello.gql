@@ -1,0 +1,23 @@
+# data struct
+type Hello {
+  id: ID!
+  name: String!
+}
+
+# Fetch name data
+type Query {
+  # Greet a name from the list with the id of the name
+  sayGreets(id: ID!): String!
+  # The list of names
+  names: [Hello]!
+}
+
+# Mutations of names
+type Mutation {
+  # Add a new name
+  addGreetsName(name: String!): Hello
+  # Delete name
+  delName(id: Int!): Hello
+  # Update name
+  modName(id: Int!, name: String!): Hello
+}
