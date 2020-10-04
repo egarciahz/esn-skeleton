@@ -18,6 +18,7 @@
   ],
   "plugins": [
     "add-module-exports",
+    "@babel/plugin-proposal-export-default-from",
     [
       "@babel/plugin-transform-runtime",
       {
