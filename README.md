@@ -10,12 +10,18 @@ If you have [nvm](https://github.com/nvm-sh/nvm) configured in your operating sy
 
 Set your environment file with dialect settings to sequelize inside `.env` file, you can also specify the environment mode (which by default is **development**), PORT and HOST of application.
 
+Create your database using the following command: `npx sequelize db:create` and run `npx sequelize db:migrate` to run migrations.
+
 You are ready to go, ok now run the command: `npm start`
 
 ### Folder structure
+The following is the recommended project structure, this keeps a directory clean and easy to read. 
 
+But you can always make your project what ;)
 ```
 - src
+    - api
+        - v1
     - config
     - db
         - migrations
