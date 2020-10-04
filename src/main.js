@@ -6,20 +6,25 @@ import { json as parseJson } from 'body-parser';
 import env from "./config/env";
 
 const port = parseInt(env.PORT || 3000);
-const host = env.HOST || `http://localhost:${port}`;
+const host = env.HOST || `http://localhost`;
 const isProdMode = process.env.NODE_ENV === 'production';
 const app = express();
 
 app.use(cors({
-    origin:[host]
+    origin: [host]
 }));
+
 app.use(helmet({
+    contentSecurityPolicy: false,
     hidePoweredBy: isProdMode,
-    hsts: isProdMode
+    hsts: isProdMode,
 }));
+
+app.use(parseJson());
+
 app.use(morgan('tiny'));
 app.use(parseJson());
 
 app.listen(port, () => {
-    console.info(`Server listen on ${host}`);
+    console.info(`Server listen on ${host}:${port}`);
 });
