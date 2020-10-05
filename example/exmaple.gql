@@ -30,7 +30,7 @@ query all {
     name
     id
   }
-  name : sayGreets(id: 1)
+  single : sayGreets(id: 1)
 }
 
 mutation delGreets {

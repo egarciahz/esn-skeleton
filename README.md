@@ -15,17 +15,67 @@ Create your database using the following command: `npx sequelize db:create` and 
 You are ready to go, ok now run the command: `npm start`
 
 ### Folder structure
-The following is the recommended project structure, this keeps a directory clean and easy to read. 
+
+The following is the recommended project structure, this keeps a directory clean and easy to read.
 
 But you can always make your project what ;)
+
 ```
 - src
-    - api
-        - v1
+    - graphql
+        - resolvers
+        - types
     - config
     - db
         - migrations
         - models
         - seeders
     - lib
+```
+
+## Examples
+Run following example onto graphql client
+
+```graphql
+mutation add {
+  ezequiel: addGreetsName(name: "Ezequiel") {
+    name
+    id
+  }
+
+  other: addGreetsName(name: "Other") {
+    name
+    id
+  }
+
+  genesis: addGreetsName(name: "Genesis") {
+    name
+    id
+  }
+
+  maria: addGreetsName(name: "Maria") {
+    name
+    id
+  }
+
+  milagros: modName(id: 2, name: "Milagros") {
+    name
+    id
+  }
+}
+
+query all {
+  allNames: names {
+    name
+    id
+  }
+  single: sayGreets(id: 1)
+}
+
+mutation delGreets {
+  deleted: delName(id: 3) {
+    name
+    id
+  }
+}
 ```
